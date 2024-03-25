@@ -6,7 +6,7 @@ def is_ok(word):#筛选长度大于等于2的汉字词语
         if ch<'\u4e00' or ch>'\u9fff':
             return False
     return True
-path1='#输入path'
+path1='已分词数据'
 for dirpath,dirnames,files in os.walk(path1):#遍历老师给出的所有文档
     for i in range(0,len(files)):
         path2=path1+'\\'+files[i]
@@ -20,7 +20,7 @@ for dirpath,dirnames,files in os.walk(path1):#遍历老师给出的所有文档
                         dic1[c]=1
                     else:#扫描过了，次数加一
                         dic1[c]=dic1[c]+1
-        path3='#输出path'+str(i)+'.txt'
+        path3='\\词项文档的关联矩阵\\'+str(i)+'.txt'
         with open(path3,'x') as f2:
             for l in lst1:
                 f2.write(l+' '+str(dic1[l])+' '+str(i+1))#依次写入词项，出现的次数，文档名
