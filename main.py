@@ -6,7 +6,7 @@ dic2={}#dic2为1-532与老师给出的已分词的文件名的映射，方便之
 dic3={}#词项与idf值之间的哈希映射
 my_list=[]
 def import_InvertedFile():
-    path='C:\\Users\\Xu Zhuanyue\\Desktop\\倒排索引表\\InvertedFile.txt'
+    path='InvertedFile.txt'
     with open(path,'r') as f:#读入已经建好的倒排索引表，倒排索引表每一行按如下格式存储：词项 df 包含词项的文件
         for line in f.readlines():#读入倒排索引表的每一行
             lst=list(line.split())
@@ -16,13 +16,13 @@ def import_InvertedFile():
             idf=math.log(532/int(lst[1]),10)#计算每个词项的idf值
             dic3[lst[0]]=idf#建立词项与idf值之间的哈希映射
     #file_txt为老师给出的已分词的txt文件保存的绝对路径
-    with open("C:\\Users\\Xu Zhuanyue\\Desktop\\file_list.txt",'r') as f:
+    with open("file_list.txt",'r') as f:
         lst=f.readlines()
         for i in range(1,len(lst)+1):
             dic2[i]=lst[i-1]
     for i in range(0,532):
         dic4={}
-        path='C:\\Users\\Xu Zhuanyue\\Desktop\\余弦长度归一化值\\'+str(i)+'.txt'
+        path=''+str(i)+'.txt'
         with open(path,'r') as f:
             for line in f.readlines():
                 lst3=list(line.split())
