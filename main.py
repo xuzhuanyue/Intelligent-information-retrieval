@@ -22,7 +22,7 @@ def import_InvertedFile():
             dic2[i]=lst[i-1]
     for i in range(0,532):
         dic4={}
-        path=''+str(i)+'.txt'
+        path='\\余弦长度归一化值\\'+str(i)+'.txt'
         with open(path,'r') as f:
             for line in f.readlines():
                 lst3=list(line.split())
